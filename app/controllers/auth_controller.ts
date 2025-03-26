@@ -11,7 +11,7 @@ export default class AuthController {
 
     return response.ok({
       token: token,
-      user: user.serialize(),
+      ...user.serialize(),
     })
   }
 
@@ -30,6 +30,6 @@ export default class AuthController {
     }
     await User.accessTokens.delete(user, token)
 
-    return response.ok({ message: 'Logged out' })
+    return response.ok({ success: true, message: 'Logged out' })
   }
 }
