@@ -12,7 +12,7 @@ import { middleware } from '#start/kernel'
 
 router.get('/', async () => {
   return {
-    docto: 'pas libre',
+    calendar: 'a lot',
   }
 })
 
