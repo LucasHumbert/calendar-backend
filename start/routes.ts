@@ -41,3 +41,17 @@ router
     }
   })
   .use(middleware.auth())
+
+/**
+ *
+ * REPETITIVES EVENTS ROUTES
+ *
+ */
+const RepetitiveEventsController = () => import('#controllers/repetitive_events_controller')
+
+router
+  .group(() => {
+    router.post('create', [RepetitiveEventsController, 'create'])
+  })
+  .prefix('repetitive-event')
+  .use(middleware.auth())
