@@ -44,14 +44,16 @@ router
 
 /**
  *
- * REPETITIVES EVENTS ROUTES
+ * EVENTS ROUTES
  *
  */
-const RepetitiveEventsController = () => import('#controllers/repetitive_events_controller')
+const EventsController = () => import('#controllers/events_controller')
 
 router
   .group(() => {
-    router.post('create', [RepetitiveEventsController, 'create'])
+    router.get('all-repetitive', [EventsController, 'getAllRepetitiveEvents'])
+    router.get('find-repetitive/:id', [EventsController, 'getRepetitiveEvent'])
+    router.post('create', [EventsController, 'createRepetitiveEvent'])
   })
-  .prefix('repetitive-event')
+  .prefix('event')
   .use(middleware.auth())
