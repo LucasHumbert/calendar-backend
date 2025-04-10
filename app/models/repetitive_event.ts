@@ -9,7 +9,7 @@ export default class RepetitiveEvent extends BaseModel {
 
   // 1 is Monday and 7 is Sunday
   @column()
-  declare weekDay: number
+  declare weekDays: { days: number[] }
 
   @column()
   declare title: string
