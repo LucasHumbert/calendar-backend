@@ -32,6 +32,7 @@ export default class EventsController {
     const event = await RepetitiveEvent.create(payload)
 
     return response.ok({
+      success: true,
       event: event,
     })
   }
